@@ -77,8 +77,11 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: const Text('Bookmark removed'),
-              backgroundColor: AppTheme.surface,
+              content: const Text(
+                'Bookmark removed',
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: AppTheme.primary,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -90,7 +93,10 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: const Text('Failed to remove bookmark'),
+              content: const Text(
+                'Failed to remove bookmark',
+                style: TextStyle(color: Colors.white),
+              ),
               backgroundColor: AppTheme.error,
               behavior: SnackBarBehavior.floating,
             ),
