@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1043044865580",
+    "project_id": "wign-realm",
+    "storage_bucket": "wign-realm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043044865580:android:528f8cd20f62dad304e389",
+        "android_client_info": {
+          "package_name": "com.wignrealm.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFXE0ZH_7lc0mlp9baZxsVPufa3ainOJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
