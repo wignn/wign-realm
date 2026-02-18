@@ -77,8 +77,11 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: const Text('Bookmark removed'),
-              backgroundColor: AppTheme.surface,
+              content: const Text(
+                'Bookmark removed',
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: AppTheme.primary,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -90,7 +93,10 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: const Text('Failed to remove bookmark'),
+              content: const Text(
+                'Failed to remove bookmark',
+                style: TextStyle(color: Colors.white),
+              ),
               backgroundColor: AppTheme.error,
               behavior: SnackBarBehavior.floating,
             ),
@@ -320,32 +326,43 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: AppTheme.error.withOpacity(0.1),
+              gradient: LinearGradient(
+                colors: [
+                  AppTheme.primary.withOpacity(0.2),
+                  AppTheme.primary.withOpacity(0.05),
+                ],
+              ),
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              Icons.error_outline,
-              size: 40,
-              color: AppTheme.error,
+              Icons.login_rounded,
+              size: 48,
+              color: AppTheme.primary,
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
           Text(
-            'Something went wrong',
-            style: Theme.of(context).textTheme.titleMedium,
+            'Sign In Required',
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
           Text(
-            _error ?? 'Failed to load bookmarks',
-            style: TextStyle(color: AppTheme.textMuted),
+            'Please sign in to view your bookmarks',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: AppTheme.textMuted, height: 1.5),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
           ElevatedButton.icon(
-            onPressed: _loadBookmarks,
-            icon: const Icon(Icons.refresh),
-            label: const Text('Retry'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
+            icon: const Icon(Icons.login),
+            label: const Text('Sign In'),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            ),
           ),
         ],
       ),

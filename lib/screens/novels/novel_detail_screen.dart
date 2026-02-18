@@ -75,8 +75,9 @@ class _NovelDetailScreenState extends State<NovelDetailScreen> {
               result.isBookmarked
                   ? 'Added to bookmarks'
                   : 'Removed from bookmarks',
+              style: const TextStyle(color: Colors.white),
             ),
-            backgroundColor: AppTheme.surface,
+            backgroundColor: AppTheme.primary,
             behavior: SnackBarBehavior.floating,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
@@ -90,7 +91,10 @@ class _NovelDetailScreenState extends State<NovelDetailScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Failed to update bookmark'),
+            content: const Text(
+              'Failed to update bookmark',
+              style: TextStyle(color: Colors.white),
+            ),
             backgroundColor: AppTheme.error,
             behavior: SnackBarBehavior.floating,
           ),

@@ -1,8 +1,7 @@
 class ApiConfig {
   static const String baseUrl = String.fromEnvironment("BASE_URL", defaultValue: 'http://localhost:4001');
   static const String apiKey = String.fromEnvironment("API_KEY", defaultValue: '');
-  // Replace with actual API key
-
+  
   // Endpoints
   static const String login = '/api/auth/login';
   static const String register = '/api/auth/register';

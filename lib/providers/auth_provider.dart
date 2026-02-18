@@ -95,10 +95,13 @@ class AuthProvider extends ChangeNotifier {
   }
 
   String _parseError(dynamic error) {
-    if (error.toString().contains('Invalid credentials')) {
+    final errorStr = error.toString().toLowerCase();
+    if (errorStr.contains('invalid credentials') ||
+        errorStr.contains('unauthorized') ||
+        errorStr.contains('401')) {
       return 'Invalid email or password';
     }
-    if (error.toString().contains('already exists')) {
+    if (errorStr.contains('already exists')) {
       return 'An account with this email already exists';
     }
     return 'Something went wrong. Please try again.';
